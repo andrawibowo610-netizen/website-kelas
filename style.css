@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: linear-gradient(-45deg, #020024, #090979, #020024, #000000);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+    color: white;
+}
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+
+/* Background animasi */
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    text-align: center;
+    padding: 30px;
+    font-size: 36px;
+    letter-spacing: 5px;
+    text-shadow: 0 0 15px cyan;
+    animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 10px cyan;
+    }
+    50% {
+        text-shadow: 0 0 25px cyan;
+    }
+    100% {
+        text-shadow: 0 0 10px cyan;
+    }
+}
+
+nav {
+    text-align: center;
+    padding: 10px;
+}
+
+nav a {
+    color: #00e5ff;
+    margin: 15px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.4s;
+}
+
+nav a:hover {
+    color: rgb(185, 9, 171);
+    text-shadow: 0 0 10px rgb(177, 8, 192);
+}
+
+
+/* FRAME UTAMA TIAP HALAMAN */
+
+.main-frame {
+    margin: 30px;
+    padding: 25px;
+    border: 3px solid cyan;
+    border-radius: 20px;
+    position: relative;
+    box-shadow: 0 0 20px cyan;
+    animation: frameGlow 4s infinite;
+    background: rgba(0, 0, 50, 0.5);
+}
+
+@keyframes frameGlow {
+    0% {
+        box-shadow: 0 0 15px cyan;
+    }
+    50% {
+        box-shadow: 0 0 30px blue;
+    }
+    100% {
+        box-shadow: 0 0 15px cyan;
+    }
+}
+
+
+/* Sudut frame keren */
+
+.main-frame:before,
+.main-frame:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgb(0, 255, 200);
+}
+
+.main-frame:before {
+    top: -10px;
+    left: -10px;
+    border-right: none;
+    border-bottom: none;
+}
+
+.main-frame:after {
+    bottom: -10px;
+    right: -10px;
+    border-left: none;
+    border-top: none;
+}
+
+
+/* Judul dalam frame */
+
+.frame-title {
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+    border-bottom: 2px solid cyan;
+    margin-bottom: 15px;
+}
+
+
+/* Card anggota */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: rgba(0, 0, 50, 0.7);
+    padding: 15px;
+    border-radius: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 0 10px cyan;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgb(0, 255, 242);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+/* Galeri frame */
+
+.gallery-frame {
+    border: 2px dashed cyan;
+    padding: 15px;
+    border-radius: 15px;
+}
+
+.gallery img {
+    width: 250px;
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 0 10px cyan;
+    transition: 0.4s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgb(0, 229, 236);
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background: #020024;
+    margin-top: 20px;
+}
+.music-player {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.music-player button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.music-menu {
+  margin-top: 10px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  width: 200px;
+}
+
+.music-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.music-menu li {
+  cursor: pointer;
+  margin: 6px 0;
+}
+
+.music-menu li:hover {
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}

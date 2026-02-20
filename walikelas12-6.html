@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Wali Kelas</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="auth.js"></script>
+<script>
+  Auth.requireLogin();
+</script>
+<div class="music-player">
+  <button id="musicToggle">🎵 Music</button>
+
+  <div id="musicMenu" class="music-menu hidden">
+    <p><b>Pilih Lagu</b></p>
+    <ul>
+      <li data-music="Music/why.mp3">🎶 Lagu Kenangan</li>
+      <li data-music="music/serana.mp3">🎧 serana for revenge</li>
+      <li data-music="music/lagu3.mp3">🔥 Semangat</li>
+    </ul>
+    <button id="pauseBtn">⏸ Pause</button>
+  </div>
+</div>
+<script src="music.js"></script>
+<audio id="music.js" loop></audio>
+<body>
+
+    <header>
+        PROFIL WALI KELAS
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="walikelas12-6.html">Wali Kelas</a>
+    </nav>
+
+    <main class="main-frame">
+
+        <div class="frame-title">
+            INFORMASI WALI KELAS
+        </div>
+
+        <div class="card" style="margin: auto; max-width: 300px;">
+
+            <!-- Ganti dengan foto wali kelas asli -->
+            <img src="img/pak-edi.jpeg" alt="Foto pakedi Kelas">
+
+            <h3>Nama Wali Kelas</h3>
+
+            <p><b>Nama:</b> Bapak EDI BASUKI</p>
+            <p><b>Mata Pelajaran:</b>SEJARAH</p>
+            <p><b></b></p>
+
+        </div>
+
+        <br>
+
+        <div class="frame-title">
+            Pesan untuk Siswa
+        </div>
+
+        <p style="text-align:center;">
+            TETAP SEMANGAT BELAJAR,JAGA KEKOMPAKAN KELAS,DISIPLIN DALAM TUGAS,DAN RAIH PRESTASI BERSAMA UNTUK MASA DEPANYANG LEBIH CERAH
+        </p>
+
+    </main>
+
+    <footer>
+        © 2026 OFC SIXENCE
+    </footer>
+
+</body>
+
+</html>

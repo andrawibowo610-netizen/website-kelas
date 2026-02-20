@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Website Kelas Futuristik</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="jav.js" defer></script>
+
+</head>
+<script src="auth.js"></script>
+<script>
+  Auth.requireLogin();
+</script>
+<div class="music-player">
+  <button id="musicToggle">🎵 Music</button>
+
+  <div id="musicMenu" class="music-menu hidden">
+    <p><b>Pilih Lagu</b></p>
+    <ul>
+      <li data-music="Music/why.mp3">🎶 why dont you love me</li>
+      <li data-music="music/serana.mp3">🎧 serana for revenge</li>
+      <li data-music="music/lagu3.mp3">🔥 Semangat</li>
+    </ul>
+    <button id="pauseBtn">⏸ Pause</button>
+  </div>
+</div>
+<script src="music.js"></script>
+<audio id="bgMusic" loop></audio>
+
+<body>
+
+    <header>
+        OFC SIXENCE KELAS 12.6 2025-2026
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="walikelas12-6.html">Wali Kelas</a>
+    </nav>
+
+    <section>
+
+
+        <section class="main-frame">
+
+
+            <div class="frame-title">
+                HOME CLASS FUTURISTIC
+            </div>
+            <div class="card" style="margin: auto;width:800px;">
+            <img src="img/fotokelas.jpeg" alt="fotokelas">
+            </div>
+
+            <h3>Visi</h3>
+            <p>
+                Menjadi kelas modern, kreatif, berprestasi, dan berkarakter di era teknologi.
+            </p>
+
+            <h3>Misi</h3>
+            <ul>
+                <li>Belajar dengan semangat</li>
+                <li>Mengutamakan kekompakan</li>
+                <li>Mengembangkan bakat digital</li>
+                <li>Disiplin dan tanggung jawab</li>
+            </ul>
+
+        </section>
+        <footer>
+            © 2026 Futuristic Class
+        </footer>
+
+</body>
+
+</html>

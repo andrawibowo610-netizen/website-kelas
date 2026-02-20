@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Website Kelas</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .login-wrap{
+      min-height: 100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 24px;
+    }
+    .login-card{
+      width: 100%;
+      max-width: 420px;
+      background: rgba(64, 19, 228, 0.85);
+      border-radius: 16px;
+      padding: 22px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+      backdrop-filter: blur(6px);
+    }
+    .login-card h1{ margin: 0 0 10px; }
+    .login-card p{ margin: 0 0 16px; opacity: .8; }
+    .login-card label{ display:block; margin: 10px 0 6px; font-weight: 600; }
+    .login-card input{
+      width:100%;
+      padding: 12px 12px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      outline: none;
+    }
+    .login-card button{
+      margin-top: 14px;
+      width:100%;
+      padding: 12px;
+      border: 0;
+      border-radius: 10px;
+      cursor:pointer;
+      font-weight: 700;
+    }
+    .error{
+      margin-top: 10px;
+      color: #b00020;
+      font-weight: 600;
+      display:none;
+    }
+    .hint{
+      margin-top: 12px;
+      font-size: 12px;
+      opacity: .7;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-wrap">
+    <div class="login-card">
+      <h1>Login 🔐</h1>
+      <p>Masuk dulu biar bisa lihat website kelas.</p>
+
+      <form id="loginForm" autocomplete="off">
+        <label for="username">Username</label>
+        <input id="username" name="username" required />
+
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" required />
+
+        <button type="submit">Masuk</button>
+        <div id="err" class="error">Username atau password salah 😶</div>
+
+        <div class="hint">
+          *Masukan password yang sudah disediakan.
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    // Kalau udah login, langsung lempar ke index
+    if (Auth.isLoggedIn()) window.location.href = "index.html";
+
+    document.getElementById("loginForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const u = document.getElementById("username").value.trim();
+      const p = document.getElementById("password").value;
+
+      const ok = Auth.login(u, p);
+      const err = document.getElementById("err");
+      err.style.display = ok ? "none" : "block";
+
+      if (ok) window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

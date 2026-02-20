@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Galeri Kelas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="auth.js"></script>
+<script>
+  Auth.requireLogin();
+</script>
+<div class="music-player">
+  <button id="musicToggle">🎵 Music</button>
+
+  <div id="musicMenu" class="music-menu hidden">
+    <p><b>Pilih Lagu</b></p>
+    <ul>
+      <li data-music="Music/why.mp3">🎶 Lagu Kenangan</li>
+      <li data-music="music/seranamp3">🎧 serana for revenge</li>
+      <li data-music="music/lagu3.mp3">🔥 Semangat</li>
+    </ul>
+    <button id="pauseBtn">⏸ Pause</button>
+  </div>
+</div>
+<script src="music.js"></script>
+<audio id="bgMusic" loop></audio>
+<body>
+
+    <header>GALERI KENANGAN</header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="galeri.html">Galeri</a>
+        <a href="walikelas12-6.html">Wali Kelas</a>
+    </nav>
+
+    <section class="main-frame">
+
+        <div class="frame-title">
+            GALERI KENANGAN
+        </div>
+
+        <div class="gallery-frame">
+
+            <div class="gallery">
+                <img src="img/G1.jpeg">
+                <img src="img/G2.jpeg">
+                <img src="img/G3.jpeg">
+                <img src="img/G4.jpeg">
+                <img src="img/G5.jpeg">
+                <img src="img/G6.jpeg">
+                <img src="img/G7.jpeg">
+                <img src="img/foto1.jpg">
+                <img src="img/G8.jpeg">
+                <img src="img/G9.jpeg">
+                <img src="img/G10.jpeg">
+                <img src="img/G11.jpeg">
+                <img src="img/G12.jpeg">
+                <img src="img/G13.jpeg">
+                <img src="img/G14.jpeg">
+                <img src="img/G15.jpeg">
+                <img src="img/G16.jpeg">
+            </div>
+
+        </div>
+
+    </section>
+
+
+</body>
+
+</html>
