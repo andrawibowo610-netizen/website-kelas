@@ -227,3 +227,10 @@ footer {
 .hidden {
   display: none;
 }
+.logout-btn {
+    padding: 8px 14px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
