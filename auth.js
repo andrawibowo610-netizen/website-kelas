@@ -39,3 +39,10 @@ const Auth = (() => {
 
   return { isLoggedIn, login, requireLogin, logout, goBackAfterLogin };
 })();
+function logout(){
+  localstorage.removeItem("kelas_site_logged_in");
+  localStorage.removeItem("bgMusicPlaying");
+  window.location.href = "login.html";
+}
+
+
