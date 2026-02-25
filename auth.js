@@ -12,10 +12,13 @@ const Auth = (() => {
     return localStorage.getItem(KEY) === "true";
   }
 
-  function login(username, password) {
-    const ok = username === USERNAME && password === PASSWORD;
-    if (ok) localStorage.setItem(KEY, "true");
-    return ok;
+  function login(username, password, namayangdipilih) {
+    const user = USERS.find(u =>
+      u.username === username &&
+      u.password === password && 
+      u.nama === namaDipilih);
+    if (user) {
+      localStorage.setItem("kelas
   }
 
   function requireLogin() {
@@ -50,5 +53,6 @@ const USER = [
   { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
   { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
     
+
 
 
