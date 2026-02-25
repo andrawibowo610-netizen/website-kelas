@@ -44,5 +44,11 @@ function logout(){
   localStorage.removeItem("bgMusicPlaying");
   window.location.href = "login.html";
 }
+const USER = [
+  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
+  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
+  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
+  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
+    
 
 
