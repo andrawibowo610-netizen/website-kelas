@@ -74,7 +74,6 @@
         </section>
         <footer>
             © 2026 Futuristic Class
-            <button onclick="Auth.logout()">Logout</button>
         </footer>
 <script src="users.js"></script>
 <script src="auth.js"></script>
@@ -89,11 +88,13 @@
     document.getElementById("loginInfo").innerText =
       `Login sebagai: ${user.nama} (Absen ${user.absen})`;
   }
+    <button onclick="Auth.logout()">Logout</button>
 </script>
 </body>
 
 
 </html>
+
 
 
 
