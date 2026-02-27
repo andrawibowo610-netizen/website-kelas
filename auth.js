@@ -4,7 +4,7 @@ const Auth = (() => {
   const USER_KEY = "kelas_user_data";
 
   function login(username, password) {
-    const user = USERS.find(
+    const user = user.find(
       u => u.username === username && u.password === password
     );
 
@@ -39,3 +39,4 @@ const Auth = (() => {
 
   return { login, isLoggedIn, getUser, requireLogin, logout };
 })();
+
