@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="jav.js" defer></script>
-
+<button onclick="Auth.logout()">Logout</button>
 </head>
 <script src="auth.js"></script>
 <script>
@@ -76,11 +76,25 @@
             © 2026 Futuristic Class
             <button onclick="Auth.logout()">Logout</button>
         </footer>
+<script src="users.js"></script>
+<script src="auth.js"></script>
+<script>
+  Auth.requireLogin();
+</script>
+        <p id="loginInfo"></p>
 
+<script>
+  const user = Auth.getUser();
+  if (user) {
+    document.getElementById("loginInfo").innerText =
+      `Login sebagai: ${user.nama} (Absen ${user.absen})`;
+  }
+</script>
 </body>
 
 
 </html>
+
 
 
 
