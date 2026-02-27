@@ -1,68 +1,41 @@
 // auth.js
-// NOTE: Ini hanya proteksi tampilan (bukan security beneran) karena static website.
-
 const Auth = (() => {
-  // ✅ GANTI SESUAI MAU LO:
-  const USERNAME = "kelas12-6";
-  const PASSWORD = "angkatan2026";
+  const LOGIN_KEY = "kelas_logged_in";
+  const USER_KEY = "kelas_user_data";
 
-  const KEY = "kelas_site_logged_in";
+  function login(username, password) {
+    const user = USERS.find(
+      u => u.username === username && u.password === password
+    );
+
+    if (user) {
+      localStorage.setItem(LOGIN_KEY, "true");
+      localStorage.setItem(USER_KEY, JSON.stringify(user));
+      return true;
+    }
+    return false;
+  }
 
   function isLoggedIn() {
-    return localStorage.getItem(KEY) === "true";
+    return localStorage.getItem(LOGIN_KEY) === "true";
   }
 
-  function login(username, password, namaDipilih) {
-  const user = USERS.find(u =>
-    u.username === username &&
-    u.password === password &&
-    u.nama === namaDipilih
-  );
-
-  if (user) {
-    localStorage.setItem("kelas_site_logged_in", "true");
-    localStorage.setItem("login_nama", user.nama);
-    localStorage.setItem("login_absen", user.absen);
-    return true;
-    return { isLoggedIn, login, requireLogin, logout };
-  }
-}
-      localStorage.setItem("kelas
+  function getUser() {
+    const data = localStorage.getItem(USER_KEY);
+    return data ? JSON.parse(data) : null;
   }
 
   function requireLogin() {
     if (!isLoggedIn()) {
-      // simpan halaman terakhir biar setelah login bisa balik
-      localStorage.setItem("redirect_after_login", window.location.pathname.split("/").pop());
       window.location.href = "login.html";
     }
   }
 
   function logout() {
-    localStorage.removeItem(KEY);
+    localStorage.removeItem(LOGIN_KEY);
+    localStorage.removeItem(USER_KEY);
     window.location.href = "login.html";
   }
 
-  function goBackAfterLogin(defaultPage = "index.html") {
-    const target = localStorage.getItem("redirect_after_login") || defaultPage;
-    localStorage.removeItem("redirect_after_login");
-    window.location.href = target;
-  }
-
-  return { isLoggedIn, login, requireLogin, logout, goBackAfterLogin };
+  return { login, isLoggedIn, getUser, requireLogin, logout };
 })();
-function logout(){
-  localstorage.removeItem("kelas_site_logged_in");
-  localStorage.removeItem("bgMusicPlaying");
-  window.location.href = "login.html";
-}
-const USER = [
-  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
-  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
-  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
-  { username: "kelas12-6", password:"null",nama: "nill", absen: 1 },
-    
-
-
-
-
