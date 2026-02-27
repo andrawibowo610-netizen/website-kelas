@@ -54,6 +54,23 @@
     }
   </style>
 </head>
+  <script src="users.js"></script>
+<script src="auth.js"></script>
+
+<script>
+document.getElementById("loginForm").addEventListener("submit", function(e){
+  e.preventDefault();
+
+  const u = document.getElementById("username").value;
+  const p = document.getElementById("password").value;
+
+  if (Auth.login(u, p)) {
+    window.location.href = "index.html";
+  } else {
+    alert("Username atau password salah");
+  }
+});
+</script>
 <body>
 
   <div class="login-wrap">
@@ -104,5 +121,6 @@
   </script>
 </body>
 </html>
+
 
 
