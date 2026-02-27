@@ -61,7 +61,14 @@
       <h1>Login 🔐</h1>
       <p>Masuk dulu biar bisa lihat website kelas.</p>
 
-      <form id="loginForm" autocomplete="off">
+      <form <label for="nama">Nama</label>
+<select id="nama" required>
+  <option value="">-- Pilih Nama --</option>
+  <option>Andi</option>
+  <option>Budi</option>
+  <option>Citra</option>
+</select>
+        id="loginForm" autocomplete="off">
         <label for="username">Username</label>
         <input id="username" name="username" required />
 
@@ -80,7 +87,7 @@
 
   <script src="auth.js"></script>
   <script>
-    // Kalau udah login, langsung lempar ke index
+   
     if (Auth.isLoggedIn()) window.location.href = "index.html";
 
     document.getElementById("loginForm").addEventListener("submit", (e) => {
@@ -97,3 +104,4 @@
   </script>
 </body>
 </html>
+
