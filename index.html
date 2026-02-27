@@ -6,7 +6,6 @@
 
     <link rel="stylesheet" href="style.css">
     <script src="jav.js" defer></script>
-<button onclick="Auth.logout()">Logout</button>
 </head>
 <script src="auth.js"></script>
 <script>
@@ -33,6 +32,14 @@
 </script>
 </script>
 <body>
+
+<button onclick="Auth.logout()">Logout</button>
+
+<script src="user.js"></script>
+<script src="auth.js"></script>
+<script>
+  Auth.requireLogin();
+</script>
 
     <header>
         OFC SIXENCE KELAS 12.6 2025-2026
@@ -94,6 +101,7 @@
 
 
 </html>
+
 
 
 
