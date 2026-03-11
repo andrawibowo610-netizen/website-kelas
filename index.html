@@ -82,25 +82,15 @@
         <footer>
             © 2026 Futuristic Class
         </footer>
-<script src="users.js"></script>
 <script src="auth.js"></script>
 <script>
   Auth.requireLogin();
-</script>
-        <p id="loginInfo"></p>
-
-<script>
-  const user = Auth.getUser();
-  if (user) {
-    document.getElementById("loginInfo").innerText =
-      `Login sebagai: ${user.nama} (Absen ${user.absen})`;
-  }
-    <button onclick="Auth.logout()">Logout</button>
 </script>
 </body>
 
 
 </html>
+
 
 
 
