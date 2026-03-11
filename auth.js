@@ -6,6 +6,7 @@ const Auth = (() => {
   const USERNAME = "kelas12-6";
   const PASSWORD = "angkatan2026";
 
+  const Auth = (() => {
   const KEY = "kelas_site_logged_in";
 
   function isLoggedIn() {
@@ -13,22 +14,25 @@ const Auth = (() => {
   }
 
   function login(username, password) {
-    const ok = username === USERNAME && password === PASSWORD;
+    const ok = username === "kelas12-6" && password === "angkatan2026";
     if (ok) localStorage.setItem(KEY, "true");
     return ok;
   }
 
   function requireLogin() {
     if (!isLoggedIn()) {
-      // simpan halaman terakhir biar setelah login bisa balik
-      localStorage.setItem("redirect_after_login", window.location.pathname.split("/").pop());
       window.location.href = "login.html";
     }
   }
 
   function logout() {
-  localStorage.removeItem("kelas_site_logged_in");
-  window.location.href = "login.html";
+    localStorage.removeItem(KEY);
+    window.location.href = "login.html";
+  }
+
+  return { isLoggedIn, login, requireLogin, logout };
+})();
+  }
 }
   }
 
@@ -40,4 +44,5 @@ const Auth = (() => {
 
   return { isLoggedIn, login, requireLogin, logout, goBackAfterLogin };
 })();
+
 
