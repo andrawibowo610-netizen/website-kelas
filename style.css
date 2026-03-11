@@ -234,3 +234,13 @@ footer {
     cursor: pointer;
     font-weight: bold;
 }
+.logout-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  padding: 8px 14px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
