@@ -1,42 +1,41 @@
 // auth.js
+// NOTE: Ini hanya proteksi tampilan (bukan security beneran) karena static website.
+
 const Auth = (() => {
-  const LOGIN_KEY = "kelas_logged_in";
-  const USER_KEY = "kelas_user_data";
+  // ✅ GANTI SESUAI MAU LO:
+  const USERNAME = "kelas12-6";
+  const PASSWORD = "angkatan2026";
 
-  function login(username, password) {
-    const user = user.find(
-      u => u.username === username && u.password === password
-    );
-
-    if (user) {
-      localStorage.setItem(LOGIN_KEY, "true");
-      localStorage.setItem(USER_KEY, JSON.stringify(user));
-      return true;
-    }
-    return false;
-  }
+  const KEY = "kelas_site_logged_in";
 
   function isLoggedIn() {
-    return localStorage.getItem(LOGIN_KEY) === "true";
+    return localStorage.getItem(KEY) === "true";
   }
 
-  function getUser() {
-    const data = localStorage.getItem(USER_KEY);
-    return data ? JSON.parse(data) : null;
+  function login(username, password) {
+    const ok = username === USERNAME && password === PASSWORD;
+    if (ok) localStorage.setItem(KEY, "true");
+    return ok;
   }
 
   function requireLogin() {
     if (!isLoggedIn()) {
+      // simpan halaman terakhir biar setelah login bisa balik
+      localStorage.setItem("redirect_after_login", window.location.pathname.split("/").pop());
       window.location.href = "login.html";
     }
   }
 
   function logout() {
-    localStorage.removeItem(LOGIN_KEY);
-    localStorage.removeItem(USER_KEY);
+    localStorage.removeItem(KEY);
     window.location.href = "login.html";
   }
 
-  return { login, isLoggedIn, getUser, requireLogin, logout };
-})();
+  function goBackAfterLogin(defaultPage = "index.html") {
+    const target = localStorage.getItem("redirect_after_login") || defaultPage;
+    localStorage.removeItem("redirect_after_login");
+    window.location.href = target;
+  }
 
+  return { isLoggedIn, login, requireLogin, logout, goBackAfterLogin };
+})();
