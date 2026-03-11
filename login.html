@@ -16,7 +16,7 @@
     .login-card{
       width: 100%;
       max-width: 420px;
-      background: rgba(64, 19, 228, 0.85);
+      background: rgba(255,255,255,0.85);
       border-radius: 16px;
       padding: 22px;
       box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -54,23 +54,6 @@
     }
   </style>
 </head>
-  <script src="users.js"></script>
-<script src="auth.js"></script>
-
-<script>
-document.getElementById("loginForm").addEventListener("submit", function(e){
-  e.preventDefault();
-
-  const u = document.getElementById("username").value;
-  const p = document.getElementById("password").value;
-
-  if (Auth.login(u, p)) {
-    window.location.href = "index.html";
-  } else {
-    alert("Username atau password salah");
-  }
-});
-</script>
 <body>
 
   <div class="login-wrap">
@@ -78,14 +61,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
       <h1>Login 🔐</h1>
       <p>Masuk dulu biar bisa lihat website kelas.</p>
 
-      <form <label for="nama">Nama</label>
-<select id="nama" required>
-  <option value="">-- Pilih Nama --</option>
-  <option>gareng</option>
-  <option>jokep</option>
-  <option>dinggo</option>
-</select>
-        id="loginForm" autocomplete="off">
+      <form id="loginForm" autocomplete="off">
         <label for="username">Username</label>
         <input id="username" name="username" required />
 
@@ -96,7 +72,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
         <div id="err" class="error">Username atau password salah 😶</div>
 
         <div class="hint">
-          *Masukan password yang sudah disediakan.
+          *Ini login demo (static). Jangan pakai password beneran ya.
         </div>
       </form>
     </div>
@@ -104,7 +80,7 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
 
   <script src="auth.js"></script>
   <script>
-   
+    // Kalau udah login, langsung lempar ke index
     if (Auth.isLoggedIn()) window.location.href = "index.html";
 
     document.getElementById("loginForm").addEventListener("submit", (e) => {
@@ -121,6 +97,3 @@ document.getElementById("loginForm").addEventListener("submit", function(e){
   </script>
 </body>
 </html>
-
-
-
