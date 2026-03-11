@@ -27,8 +27,9 @@ const Auth = (() => {
   }
 
   function logout() {
-    localStorage.removeItem(KEY);
-    window.location.href = "login.html";
+  localStorage.removeItem("kelas_site_logged_in");
+  window.location.href = "login.html";
+}
   }
 
   function goBackAfterLogin(defaultPage = "index.html") {
@@ -39,3 +40,4 @@ const Auth = (() => {
 
   return { isLoggedIn, login, requireLogin, logout, goBackAfterLogin };
 })();
+
